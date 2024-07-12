@@ -1,0 +1,300 @@
+\documentclass[12pt, reqno]{amsart}
+
+%%%%%%%%%%%%%%%%%%%%%  MY STUFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\makeatletter
+%\g@addto@macro{\endabstract}{\@setabstract}
+%\makeatother
+
+
+%\usepackage{epsfig}
+\usepackage{graphics, stackrel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{amsfonts}
+\usepackage{natbib}
+\usepackage{enumitem}
+%font
+%\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec} 
+\usepackage[xcharter]{newtxmath}
+%\setmainfont{XCharter}
+%\usepackage{mathpazo}
+%\usepackage{tgpagella}
+
+%subfloats / figures
+\usepackage{caption}
+\usepackage{subcaption}
+
+% For pandas latex tables
+
+\usepackage{fancyvrb}
+\usepackage[dvipsnames,svgnames,table]{xcolor}
+\usepackage{mdwlist}
+
+\usepackage[citecolor=blue, colorlinks=true, linkcolor=blue]{hyperref}
+
+
+% lists
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=2pt,topsep=3pt}
+\setlist[itemize]{itemsep=2pt,topsep=3pt}
+\setlist[enumerate,1]{label=(\roman*)}
+
+\usepackage{mathrsfs}  % caligraphic
+%\usepackage{stix} 
+\usepackage{bbm}
+\usepackage{bm}        % bold symbols
+
+
+%% page layout
+\usepackage[left=1.25in, right=1.25in, top=1.0in, bottom=1.15in, includehead, includefoot]{geometry}
+
+% nice inequalities
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+% inner product
+\providecommand{\inner}[1]{\left\langle{#1}\right\rangle}
+\providecommand{\innerp}[1]{\left\langle{#1}\right\rangle_\pi}
+
+
+\usepackage[ruled, linesnumbered]{algorithm2e}
+
+%extra spacing
+\renewcommand{\baselinestretch}{1.32}
+
+
+%horizonal line
+\newcommand{\HRule}{\rule{\linewidth}{0.3mm}}
+
+% skip a line between paragraphs, no indentation
+\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
+\setlength{\parindent}{0pt}
+
+% footnote without a maker (blfootnote)
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Int}{int}
+%\DeclareMathOperator{\overset{\circ}}{int}
+\DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\determinant}{det}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\graph}{graph}
+
+% mics short cuts and symbols
+\newcommand{\st}{\ensuremath{\ \mathrm{s.t.}\ }}
+\newcommand{\setntn}[2]{ \{ #1 : #2 \} }
+\newcommand{\fore}{\therefore \quad}
+\newcommand{\preqsd}{\preceq_{sd} }
+\newcommand{\toas}{\stackrel {\textrm{ \scriptsize{a.s.} }} {\to} }
+\newcommand{\tod}{\stackrel { d } {\to} }
+\newcommand{\tou}{\stackrel { u } {\to} }
+\newcommand{\toweak}{\stackrel { w } {\to} }
+\newcommand{\topr}{\stackrel { p } {\to} }
+\newcommand{\disteq}{\stackrel { \mathscr D } {=} }
+\newcommand{\eqdist}{\stackrel {\textrm{ \scriptsize{d} }} {=} }
+\newcommand{\iidsim}{\stackrel {\textrm{ {\sc iid }}} {\sim} }
+\newcommand{\1}{\mathbbm 1}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\dee}{\,{\rm d}}
+\newcommand{\og}{{\mathbbm G}}
+\newcommand{\ctimes}{\! \times \!}
+\newcommand{\sint}{{\textstyle\int}}
+
+\newcommand{\given}{\, | \,}
+\newcommand{\A}{\forall}
+
+% d for integrals
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\e{\mathrm{e}}
+
+
+% Special symbols and shortcuts
+\newcommand{\bmeta}{\bm{\eta}}
+\newcommand{\bmxi}{\bm{\xi}}
+
+\newcommand{\infot}{\fF_t}
+
+\newcommand{\pspace}{\mathscr{P}(\mathsf{X})}
+\newcommand{\cspace}{\mathscr{C}(\mathsf{X})}
+
+%\renewcommand{\times}{\! \times \!}
+
+\newcommand{\aA}{\mathscr A}
+\newcommand{\cC}{\mathscr C}
+\newcommand{\sS}{\mathcal S}
+\newcommand{\bB}{\mathscr B}
+\newcommand{\oO}{\mathcal O}
+\newcommand{\gG}{\mathcal G}
+\newcommand{\hH}{\mathcal H}
+\newcommand{\kK}{\mathcal K}
+\newcommand{\iI}{\mathcal I}
+\newcommand{\eE}{\mathcal E}
+\newcommand{\fF}{\mathscr F}
+\newcommand{\qQ}{\mathcal Q}
+\newcommand{\tT}{\mathcal T}
+\newcommand{\xX}{\mathcal X}
+\newcommand{\yY}{\mathcal Y}
+\newcommand{\rR}{\mathcal R}
+\newcommand{\zZ}{\mathcal Z}
+\newcommand{\wW}{\mathcal W}
+\newcommand{\uU}{\mathcal U}
+\newcommand{\lL}{\mathcal L}
+
+\newcommand{\mM}{\mathcal M}
+\newcommand{\dD}{\mathcal D}
+
+\newcommand{\pP}{\mathring P}
+
+\newcommand{\vV}{\mathcal V}
+
+\newcommand{\Bsf}{\mathsf B}
+\newcommand{\Hsf}{\mathsf H}
+\newcommand{\Vsf}{\mathsf V}
+
+\newcommand{\BB}{\mathbbm B}
+\newcommand{\DD}{\mathbbm D}
+\newcommand{\RR}{\mathbbm R}
+\newcommand{\CC}{\mathbbm C}
+\newcommand{\QQ}{\mathbbm Q}
+\newcommand{\NN}{\mathbbm N}
+\newcommand{\GG}{\mathbbm G}
+\newcommand{\UU}{\mathbbm U}
+\newcommand{\TT}{\mathbbm T}
+\newcommand{\YY}{\mathbbm Y}
+\newcommand{\ZZ}{\mathbbm Z}
+\newcommand{\HH}{\mathbbm H}
+\newcommand{\MM}{\mathbbm M}
+\newcommand{\PP}{\mathbbm P}
+\newcommand{\EE}{\mathbbm E}
+
+
+\newcommand{\bH}{\mathbf H}
+\newcommand{\bT}{\mathbf T}
+
+\newcommand{\var}{\mathbbm V}
+
+\newcommand{\XX}{\mathsf X}
+\newcommand{\II}{\mathsf I}
+\newcommand{\WW}{\mathsf W}
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\bP}{\mathbf P}
+\newcommand{\bQ}{\mathbf Q}
+\newcommand{\bE}{\mathbf E}
+\newcommand{\bM}{\mathbf M}
+\newcommand{\bX}{\mathbf X}
+\newcommand{\bY}{\mathbf Y}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{notation}{Notation}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{condition}{Condition}[section]
+
+
+%\DeclareTextFontCommand{\emph}{\bfseries}
+
+%%%%%%%%%%%%%%%%%% end my preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\begin{document}
+
+
+\title{Hyperbolic discounting note}
+
+
+\maketitle
+
+
+The aim is to produce a recursive expression that allows us to apply ADP methods
+to hyperbolic discounting.  At this stage we just seek a recursive expression
+for lifetime value.
+
+Lifetime value is given by 
+%
+\begin{equation*}
+    v(x) \coloneq 
+    \EE_x 
+    \left[
+        r(X_0) + \alpha r(X_1) + \sum_{t \geq 2} \beta^t r(X_t)
+    \right]
+\end{equation*}
+%
+Pointwise this is
+%
+\begin{equation*}
+    v = r + \alpha P r + \sum_{t \geq 2} (\beta P)^t r
+\end{equation*}
+%
+We generalize to allow state-dependent discounting, taking $J$ and $K$ to be
+positive linear operators and writing
+%
+\begin{equation}\label{eq:vdef}
+    v = r + J r + \sum_{t \geq 2} K^t r
+\end{equation}
+%
+Rearranging gives
+%
+\begin{equation*}
+    v 
+    = r + J r + K^2 r + K \sum_{t \geq 2} K^t r
+\end{equation*}
+%
+Using \eqref{eq:vdef} again gives
+%
+\begin{align*}
+    v & = r + J r + K^2 r + K (v - r - Jr)
+    \\
+      & = r - Kr + J r - KJr + K^2 r + K v,
+\end{align*}
+%
+or
+%
+\begin{equation*}
+    v = (I - K)(r + J r)  + K^2 r + K v 
+\end{equation*}
+%
+If $r(K) < 1$, then lifetime value is uniquely defined by this recursive
+expression.
+
+
+%\bibliographystyle{ecta}
+%\bibliography{localbib}
+
+\end{document}
+
+% Local Variables:
+% TeX-engine: xetex
+% End:
