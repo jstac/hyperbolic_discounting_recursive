@@ -336,6 +336,12 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bbm/bbm9.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bbm/bbm7.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmss12.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmss9.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
 INPUT notes.aux
 INPUT ./notes.out
 INPUT ./notes.out

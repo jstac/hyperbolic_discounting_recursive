@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1720743675.3434 "notes.tex" "notes.pdf" "notes" 1720743676.03994 0
+["pdflatex"] 1722985353.20213 "notes.tex" "notes.pdf" "notes" 1722985353.91261 0
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -18,6 +18,9 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmr6.tfm" 1254269338 11836 e3b6ce3e601aec94f64a536e7f4224d5 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm" 1254269338 11852 5a9022f105fd1ee2797df861e79ae9a0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm" 1254269338 11884 c93929a6974dce79eabb778f219d7e18 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmss12.tfm" 1254269338 11024 7a83ae8920360cd8bd5d0289069119dc ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm" 1254269338 10976 d5243dcaf5ba5ee7825c8438c6b7a7ea ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmss9.tfm" 1254269338 11004 a6c4e1a908f2608664e4229dbcec5884 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxbexx.tfm" 1699567298 1796 77ccd66cbe42a92fac156a3ad0d7cd37 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxbsy.tfm" 1699567298 2020 b1fd598ac825fac17708fc77380917de ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/newtx/ntxbsy5.tfm" 1699567298 2036 c83ec99213564b87143ec1df01d6d226 ""
@@ -111,6 +114,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty" 1714507389 6565 5adfba02f2f76cda4051952f7358a326 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1710447889 9327 5639c769ba7d5bb81b757ffe41c01cb5 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd" 1616454256 1882 28c08db1407ebff35a658fd141753d16 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd" 1616454256 1657 338c306198616f83902603448cf66d97 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd" 1616454256 1867 996fe743d88a01aca041ed22cc10e1bb ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/mdwtools/mdwlist.sty" 1137110333 4169 82ec0f794abd28d83542f6accf5da295 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/natbib/natbib.sty" 1291685959 45456 1c8843383c0bd05870c45fa0ebea6cc2 ""
@@ -138,9 +142,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1713064664 41983 7ec6bfd6bf34339a61f0f08f42298e60 ""
   "/usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1714613967 10853115 fc1d34a4e5041ec27bf53ddf6767eba5 ""
   "/usr/local/texlive/2024/texmf.cnf" 1714613911.35213 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "notes.aux" 1720743675.84942 346 f84dede85840589e74f3f82fea2c7fc5 "pdflatex"
-  "notes.out" 1720743675.84142 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "notes.tex" 1720743674.64745 7105 3bb5cf0361c7c59c45ae05f8ebeaf408 ""
+  "notes.aux" 1722985353.72134 690 198384eda7f44612750f1988e11a0a96 "pdflatex"
+  "notes.out" 1722985353.72134 372 4554747cbcb2ddd93238c44bf2d4040d "pdflatex"
+  "notes.tex" 1722985352.53643 10456 8c4df25c975bb2db69b132355b830071 ""
   (generated)
   "notes.aux"
   "notes.log"

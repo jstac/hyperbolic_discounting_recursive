@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.2)  12 JUL 2024 10:21
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.2)  7 AUG 2024 09:02
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -706,10 +706,14 @@ Package hyperref Info: Link coloring ON on input line 232.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 249.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 253.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [1] (./notes.aux)
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 264.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [1] [2] [3] (./notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
@@ -720,15 +724,15 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 4554747CBCB2DDD93238C44BF2D4040D;372.
  ) 
 Here is how much of TeX's memory you used:
- 19810 strings out of 474706
- 350091 string characters out of 5756289
- 1927403 words of memory out of 5000000
- 41586 multiletter control sequences out of 15000+600000
- 629037 words of font info for 134 fonts, out of 8000000 for 9000
+ 19857 strings out of 474706
+ 351087 string characters out of 5756289
+ 1929403 words of memory out of 5000000
+ 41623 multiletter control sequences out of 15000+600000
+ 637232 words of font info for 139 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 79i,8n,117p,594b,346s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,6n,117p,594b,483s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on notes.pdf (1 page).
+Output written on notes.pdf (3 pages).

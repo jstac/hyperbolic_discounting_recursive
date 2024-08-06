@@ -189,9 +189,9 @@
 
 \newcommand{\var}{\mathbbm V}
 
-\newcommand{\XX}{\mathsf X}
-\newcommand{\II}{\mathsf I}
-\newcommand{\WW}{\mathsf W}
+\newcommand{\Xsf}{\mathsf X}
+\newcommand{\Isf}{\mathsf I}
+\newcommand{\Wsf}{\mathsf W}
 
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
@@ -232,62 +232,150 @@
 \begin{document}
 
 
-\title{Hyperbolic discounting note}
+\title{Quasi-hyperbolic discounting note}
 
 
 \maketitle
 
 
-The aim is to produce a recursive expression that allows us to apply ADP methods
-to hyperbolic discounting.  At this stage we just seek a recursive expression
-for lifetime value.
+The aim is to apply ADP methods to quasi-hyperbolic discounting (QHD).  
 
-Lifetime value is given by 
+\section{Fully Rational QHD}
+
+Fully rational means that at time zero you choose a stationary policy that
+maximizes lifetime value and keep it forever.
+
+Lifetime value of policy $\sigma$ starting from $t=0$ is 
 %
 \begin{equation*}
-    v(x) \coloneq 
-    \EE_x 
-    \left[
-        r(X_0) + \alpha r(X_1) + \sum_{t \geq 2} \beta^t r(X_t)
-    \right]
+    w_\sigma(x) 
+    \coloneq
+    r_\sigma(x) + \beta \EE_x 
+        \sum_{t \geq 1} \delta^t r_\sigma(X_t)
 \end{equation*}
 %
 Pointwise this is
 %
 \begin{equation*}
-    v = r + \alpha P r + \sum_{t \geq 2} (\beta P)^t r
+    w_\sigma = r_\sigma + \beta P_\sigma \sum_{t \geq 1} (\delta P_\sigma)^t r
 \end{equation*}
 %
-We generalize to allow state-dependent discounting, taking $J$ and $K$ to be
-positive linear operators and writing
+Suppose for now that states and actions are finite, so $w_\sigma$ takes values
+in $V \coloneq \RR^\Xsf$.
+
+We generalize to allow state-dependent discounting, taking $B_\sigma$ and
+$D_\sigma$ to be
+positive linear operators over $V$ and writing
 %
 \begin{equation}\label{eq:vdef}
-    v = r + J r + \sum_{t \geq 2} K^t r
+    w_\sigma = r_\sigma + B_\sigma \sum_{t \geq 1} D_\sigma^t \, r_\sigma
 \end{equation}
 %
-Rearranging gives
+To maximize $w_\sigma$ using ADP theory we can
+%
+\begin{enumerate}
+    \item write $w_\sigma$ as the fixed point of an operator $S_\sigma$ and
+    \item show that $(V, \{S_\sigma\})$ is a globally stable ADP.
+\end{enumerate}
+%
+Let's start by finding $S_\sigma$.  For now we drop the subscript $\sigma$ To
+simplify notation. Rearranging \eqref{eq:vdef} gives
 %
 \begin{equation*}
-    v 
-    = r + J r + K^2 r + K \sum_{t \geq 2} K^t r
+    w 
+    = r + B D r + B \sum_{t \geq 2} D^t r
+    = r + B D r + B D \sum_{t \geq 1} D^t r
 \end{equation*}
 %
-Using \eqref{eq:vdef} again gives
-%
-\begin{align*}
-    v & = r + J r + K^2 r + K (v - r - Jr)
-    \\
-      & = r - Kr + J r - KJr + K^2 r + K v,
-\end{align*}
-%
-or
+Assuming that $B$ is invertible and using \eqref{eq:vdef} again gives
 %
 \begin{equation*}
-    v = (I - K)(r + J r)  + K^2 r + K v 
+    w 
+    = r + B D r + B D B^{-1} (w - r)
 \end{equation*}
 %
-If $r(K) < 1$, then lifetime value is uniquely defined by this recursive
-expression.
+For example, in the case where $B= \beta$, we have
+%
+\begin{equation*}
+    w 
+    = r + \beta D r + D (w - r)
+    = r - (1 - \beta) D r + D \, w
+\end{equation*}
+%
+For this case, putting the subscript $\sigma$ back in, we write
+%
+\begin{equation*}
+    S_\sigma \, w = r_\sigma - (1 - \beta) D_\sigma r_\sigma + D_\sigma \, w
+\end{equation*}
+%
+If, say, $\sup_\sigma \rho(D_\sigma) < 1$, then we have a globally stable ADP
+with value function $v^*$ and at least one optimal policy $\sigma^*$.  The usual
+optimality results apply:
+
+\begin{enumerate}
+    \item Bellman's principle of optimality holds.
+    \item VFI, HPI, OPI converge, etc.
+\end{enumerate}
+
+
+\section{QHD with Limited Self-Control}
+
+In HL and BRW, the perspective is as follows: 
+
+\begin{itemize}
+    \item There are separate ``selves'' at each point in time $t$.  
+    \item The $t=1$ self chooses a policy $\sigma$ and receives rewards
+        according to
+        %
+        \begin{equation}\label{eq:os}
+            v_\sigma 
+            = \sum_{t \geq 0} (\delta P_\sigma)^t r_\sigma
+            = \sum_{t \geq 0} D^t r_\sigma
+        \end{equation}
+        %
+    \item The $t=0$ self takes $v_\sigma$ in \eqref{eq:os} as given and chooses a policy
+        $\tau$ to solve
+        %
+        \begin{equation*}
+            \tau(x) \in \argmax_{a \in \Gamma(x)}
+            \left\{
+                r(x, a) + \beta \sum_{x'} v_\sigma(x') P(x, a, x')
+            \right\}
+        \end{equation*}
+        %
+\end{itemize}
+
+We have a stationary Markov Nash equilibrium (SMNE) when $\tau = \sigma$.
+
+We can write this more abstractly as follows:  Let
+%
+\begin{itemize}
+    \item $T_\sigma \, v = r_\sigma + D_\sigma \, v$ 
+    \item $\hat T_\sigma \, v = r_\sigma + B_\sigma \, v$ and $\hat T = \bigvee_\sigma
+        \hat T_\sigma$ 
+\end{itemize}
+%
+Let $\tau = M \sigma$ be defined by choosing $v_\sigma$ as the fixed point of
+$T_\sigma$ and then $\tau$ such that $\hat T v_\sigma = \hat T_\tau v_\sigma$.
+We seek a fixed point of $M$.
+
+Questions:
+%
+\begin{enumerate}
+    \item The policy $\tau$ is not necessarily optimal for the self at $t=1$.
+        Why would the self at $t=1$ accept it?
+    \item Why does the self at $t=1$ have different preferences to the self at
+        $t=0$?  If they are all copies of the same ``self,'' then each faces an
+        infinite horizon and has the same lifetime objective \eqref{eq:vdef}.
+        In particular, the self at $t=1$ should choose $\sigma$ to maximize
+        \eqref{eq:vdef} rather than \eqref{eq:os}.
+    \item What justification is there for focusing only on \emph{stationary} Markov Nash equilibria?  
+    \item Are there any stability results for SMNE, showing that boundedly
+        rational agents naturally converge to this behavior.
+    \item Given that there are no uniqueness results for SMNE, how can we use
+        this for quantitative work?
+\end{enumerate}
+
 
 
 %\bibliographystyle{ecta}
